@@ -7,7 +7,9 @@ import java.util.concurrent.CountDownLatch;
  */
 public class CountDownLatchTest1 {
     public static long timeTask(int nThreads,final Runnable task) throws InterruptedException {
+        //用来保证线程能够同时运行
         final CountDownLatch startGate = new CountDownLatch(1);
+        //确保所有任务执行完成才能继续执行
         final CountDownLatch endGate = new CountDownLatch(nThreads);
 
         for (int i =0 ; i < nThreads; i ++){
@@ -21,7 +23,7 @@ public class CountDownLatchTest1 {
                         }
 
                         task.run();
-                    } catch (InterruptedException e) {
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
                 }
