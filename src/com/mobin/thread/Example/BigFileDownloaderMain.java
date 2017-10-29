@@ -5,7 +5,7 @@ package com.mobin.thread.Example;
  */
 public class BigFileDownloaderMain {
     public static void main(String[] args) throws Exception {
-        String url = "https://downloads.atlassian.com/software/sourcetree/windows/ga/SourceTreeSetup-2.3.1.0.exe?_ga=2.161465213.1522870431.1508740383-2134808483.1508740383";
+        String url = "http://101.44.1.118/files/5211000006D9CFFB/dlc2.pconline.com.cn/filedown7_1322_29001581/dKg4hJWu/Adobe_Reader_XI_zh_CN_2200000013229001581.exe";
         BigFileDownloader downloader = new BigFileDownloader(url);
         int workerThreadCount = 3;
         long reportInterval = 2;
