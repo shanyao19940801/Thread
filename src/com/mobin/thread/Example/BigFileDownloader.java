@@ -50,7 +50,7 @@ public class BigFileDownloader {
         fileSize = retiveFileSize(requestURL);
         log.info("file total size: %s", fileSize);
         //String fileName = strURL.substring(strURL.lastIndexOf("/") + 1);
-        String fileName = "SourceTreeSetup-2.3.1.0.exe";
+        String fileName = "Adobe+Reader+XI@636_94248.exe";
         storage = new Storage(fileSize, fileName);
     }
 
@@ -59,6 +59,7 @@ public class BigFileDownloader {
         long lowerBound = 0; //下载数据段的起始字节
         long upperBound = 0;//下载数据段的结束字节
         DownloadTask dt;
+        //创建多个线程下载
         for (int i = (taskCount -1);  i >= 0; i --){
             lowerBound = i * chunkSizePerThread;
             if (i == taskCount -1) {
